@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: rgb(153, 72, 230);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999999;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #eb89ff;
+        }
+
+        .navbar a:hover:not {
+            background-color: #eb89ff;
+            color: #8935e9;
+        }
+
+        .main {
+            padding: 16px;
+            margin-top: 30px;
+            height: 1500px;
+           
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Times New Roman;
+            padding: 20px;
+            background: #f1f1f1;
+        }
+
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: white
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+
+        .fakeimg {
+            background-color: #aaa;
+            width: 70%;
+            padding: 20px;
+        }
+
+        .card {
+            background: lightpink;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+            margin-top: 1100px;
+        }
+
+        @media screen and (max-width:800px) {
+
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="h1">
+    <p>
+        <span class="lovely"> Emma Beldick</span>
+    </p>
+    <div class="navbar">
+        <li> <a href="EmmaBPortfolio.html">Home</a> </li>
+        <li><a href="About.html"> About</a> </a> </li>
+        <li><a href="ArtWork.html"> Art Work</a> </li>
+        <li><a class="active" href="Blog.html"> Blog</a> </li>
+        <li><a href="Contact.html"> Contact</a> </li>
+
+    </div>
+
+
+</body>
+
+<br>
+
+<body>
+    <div class="header">
+        <h2> Artist Blog </h2>
+
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2> TTILE HEADING </h2>
+                    <h5> title description, Oct.14th,2024</h5>
+                    <div class="fakeimg" style="height:200px;">Image</div>
+                    <p> description of what you learned or saw</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2> TITLE OF HEADING</h2>
+                <h5> title and date </h5>
+                <div class="fakeimg" style="height:200px;"> Image</div>
+                <p> text added </p>
+            </div>
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card">
+                <h3> Popular post</h3>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div><br>
+            </div>
+            <div class="card">
+                <h3> Follow Me</h3>
+                <p> add socials</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <h2> Footer </h2>
+    </div>
+</body>
+
+</html>

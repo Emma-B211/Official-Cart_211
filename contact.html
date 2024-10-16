@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: rgb(153, 72, 230);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999999;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #eb89ff;
+        }
+
+        .navbar a:hover:not {
+            background-color: #eb89ff;
+            color: #8935e9;
+        }
+
+        .main {
+            padding: 16px;
+            margin-top: 30px;
+            height: 1500px;
+           
+        }
+    </style>
+</head>
+
+<body class="h1">
+    <p>
+        <span class="lovely"> Emma Beldick</span>
+    </p>
+
+    <div class="navbar">
+        <li> <a href="EmmaBPortfolio.html">Home</a> </li>
+        <li><a href="About.html"> About</a> </a> </li>
+        <li><a href="ArtWork.html"> Art Work</a> </li>
+        <li> <a href="Blog.html"> Blog</a> </li>
+        <li><a class="active" href="Contact.html"> Contact</a> </li>
+
+    </div>
+
+
+</body>
+
+<body>
+    <div class="container">
+        <div style="text-align:center">
+            <h2> Contact Me</h2>
+            <p> swing by to view what I have worked on or leave us a message</p>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img src="flashlight-7718966_640.jpg" style="width:20%">
+            </div>
+
+            <div class="column">
+                <form action="/action_page.php">
+                    <label for="fname"> First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    <label for="lname"> Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    <label for="country"> Country</label>
+                    <select id="country" name="country">
+                        <option value="australia"> Australia</option>
+                        <option value="canada"> Canada</option>
+                        <option value="united states"> United States</option>
+                        <Option value="ireland"> Ireland</Option>
+                    </select>
+                    <label for="subject"> Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write Something.."
+                        style="height:170px"> </textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
