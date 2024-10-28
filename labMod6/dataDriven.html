@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Based Gradient Art</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        #locationInputs {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            width: 250px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 5px;
+            width: calc(100% - 10px);
+        }
+        #errorMessage {
+            color: red;
+            margin-top: 10px;
+        }
+        #weatherInfo {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="artCanvas"></canvas>
+    <div id="locationInputs">
+        <input type="text" id="location1" placeholder="Enter location 1">
+        <input type="text" id="location2" placeholder="Enter location 2">
+        <input type="text" id="location3" placeholder="Enter location 3">
+        <button onclick="generateArt()">Generate Art</button>
+        <div id="errorMessage"></div>
+    </div>
+    <div id="weatherInfo"></div>
+    <script>
+        const canvas = document.getElementById('artCanvas');
+        const ctx = canvas.getContext('2d');
+        const errorMessageElement = document.getElementById('errorMessage');
+        const weatherInfoElement = document.getElementById('weatherInfo');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const weatherAPIKey = 'ENTER YOUR OWN API KEY HERE';
+
+        async function fetchWeatherData(location) {
+            const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weatherAPIKey}`;
+            const response = await fetch(weatherURL);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const weatherData = await response.json();
+            return weatherData;
+        }
+
+        function kelvinToCelsius(kelvin) {
+            return kelvin - 273.15;
+        }
+
+        function getColorForTemperature(temp) {
+            if (temp < 0) return [0, 0, 255];  // Cold: Blue
+            if (temp < 10) return [0, 255, 255];  // Cool: Cyan
+            if (temp < 20) return [0, 255, 0];  // Mild: Green
+            if (temp < 30) return [255, 255, 0];  // Warm: Yellow
+            return [255, 0, 0];  // Hot: Red
+        }
+
+        function createGradient(temps) {
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            temps.forEach((temp, index) => {
+                const color = getColorForTemperature(temp);
+                gradient.addColorStop(index / (temps.length - 1), `rgb(${color[0]}, ${color[1]}, ${color[2]})`);
+            });
+            return gradient;
+        }
+
+        function drawWeatherInfo(locations, temps) {
+            weatherInfoElement.innerHTML = locations.map((location, index) => 
+                `<div>${location}: ${temps[index].toFixed(1)}°C</div>`
+            ).join('');
+        }
+
+        function showErrorMessage(message) {
+            errorMessageElement.textContent = message;
+        }
+
+        function clearErrorMessage() {
+            errorMessageElement.textContent = '';
+        }
+
+        function generateDefaultDemo() {
+            const defaultLocations = ['Default City 1', 'Default City 2', 'Default City 3'];
+            const defaultTemps = [5, 15, 25];  // Example temperatures
+
+            const gradient = createGradient(defaultTemps);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            drawWeatherInfo(defaultLocations, defaultTemps);
+            showErrorMessage('Using default demo due to API error. Please try again later.');
+        }
+
+        async function generateArt() {
+            clearErrorMessage();
+            const locations = [
+                document.getElementById('location1').value,
+                document.getElementById('location2').value,
+                document.getElementById('location3').value
+            ].filter(location => location.trim() !== '');
+
+            if (locations.length < 2) {
+                showErrorMessage('Please enter at least two locations.');
+                return;
+            }
+
+            try {
+                const weatherDataArray = await Promise.all(locations.map(fetchWeatherData));
+                const temps = weatherDataArray.map(data => kelvinToCelsius(data.main.temp));
+
+                const gradient = createGradient(temps);
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                drawWeatherInfo(locations, temps);
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                showErrorMessage('Error fetching weather data. Displaying default demo.');
+                generateDefaultDemo();
+            }
+        }
+
+        // Initial generation with default locations
+        document.getElementById('location1').value = 'London';
+        document.getElementById('location2').value = 'New York';
+        document.getElementById('location3').value = 'Tokyo';
+        generateArt();
+
+        // Resize canvas when window is resized
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            generateArt();
+        });
+    </script>
+</body>
+</html>
