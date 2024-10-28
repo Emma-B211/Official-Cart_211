@@ -9,6 +9,7 @@
             margin: 0;
             overflow: hidden;
             font-family: Arial, sans-serif;
+
         }
         canvas {
             display: block;
@@ -40,6 +41,7 @@
             padding: 10px;
             border-radius: 5px;
         }
+        
     </style>
 </head>
 <body>
@@ -62,7 +64,19 @@
         canvas.height = window.innerHeight;
 
         const weatherAPIKey = '0103230d06ee06a63792911d1033d7be';
+        
+        function drawCircle(x, y) {
+            const radius = Math.random() * 30;
+            const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = randomColor;
+            ctx.fill();
+        }
 
+        canvas.addEventListener('mousemove', (event) => {
+            drawCircle(event.clientX, event.clientY);
+        });
         async function fetchWeatherData(location) {
             const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weatherAPIKey}`;
             const response = await fetch(weatherURL);
