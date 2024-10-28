@@ -65,13 +65,22 @@
 
         const weatherAPIKey = '0103230d06ee06a63792911d1033d7be';
         
+        // canvas.width = window.innerWidth;
+        // canvas.height = window.innerHeight;
+
+       
         function drawCircle(x, y) {
             const radius = Math.random() * 30;
-            const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            const randomColor = `hsl(${Math.random() * 150}, 100%, 50%)`;
             ctx.beginPath();
             ctx.arc(x, y, radius, 0, Math.PI * 2);
             ctx.fillStyle = randomColor;
             ctx.fill();
+            canvas.addEventListener('click', () => {
+            const randomColor = `hsl(${Math.random() * 150}, 100%, 50%)`;
+            ctx.fillStyle = randomColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        })
         }
 
         canvas.addEventListener('mousemove', (event) => {
