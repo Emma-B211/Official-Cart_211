@@ -1,3 +1,21 @@
+// stop button to work
+var mixBut = document.getElementById("mixBut");
+
+mixBut.addEventListener("click", Start);
+
+function Start() {
+    console.log("Started");
+    mixBut.removeEventListener("click", Start);
+    mixBut.addEventListener("click", Stop);
+    mixBut.value = "Stop";
+}
+
+function Stop() {
+    console.log("Stopped");
+    mixBut.removeEventListener("click", Stop);
+    mixBut.addEventListener("click", Start);
+    mixBut.value = "Start";
+}
 // Initialize Audio Context and Oscillator
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const oscillator = audioContext.createOscillator();
@@ -37,33 +55,33 @@ document.getElementById("playSound").addEventListener("click", () => {
     document.getElementById("playSound").disabled = true; // Disable play button
     document.getElementById("stopSound").disabled = false; // Enable stop button
 });
-document.getElementById("playMusic").addEventListener("click",()=>{
+document.getElementById("playMusic").addEventListener("click", () => {
     oscillator.start();
-    document.getElementById("playMusic").disabled=true;
+    document.getElementById("playMusic").disabled = true;
     const ambientSound = new Audio("trees.mp3"); // Replace with your file name 
     ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
-     ambientSound.play();
-     document.getElementById("playSound").disabled = true; // Disable play button
+    ambientSound.play();
+    document.getElementById("playSound").disabled = true; // Disable play button
     document.getElementById("stopSound").disabled = false; // Enable stop button
-} );
-document.getElementById("playMusic2").addEventListener("click",()=>{
+});
+document.getElementById("playMusic2").addEventListener("click", () => {
     oscillator.start();
-    document.getElementById("playMusic2").disabled=true;
+    document.getElementById("playMusic2").disabled = true;
     const ambientSound = new Audio("rainmorning.mp3"); // Replace with your file name 
     ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
-     ambientSound.play();
-     document.getElementById("playSound").disabled = true; // Disable play button
+    ambientSound.play();
+    document.getElementById("playSound").disabled = true; // Disable play button
     document.getElementById("stopSound").disabled = false; // Enable stop button
-} );
-document.getElementById("playMusic3").addEventListener("click",()=>{
+});
+document.getElementById("playMusic3").addEventListener("click", () => {
     oscillator.start();
-    document.getElementById("playMusic3").disabled=true;
+    document.getElementById("playMusic3").disabled = true;
     const ambientSound = new Audio("beach.mp3"); // Replace with your file name 
     ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
-     ambientSound.play();
-     document.getElementById("playSound").disabled = true; // Disable play button
+    ambientSound.play();
+    document.getElementById("playSound").disabled = true; // Disable play button
     document.getElementById("stopSound").disabled = false; // Enable stop button
-} );
+});
 
 document.getElementById("stopSound").addEventListener("click", () => {
     if (currentOscillator) {
@@ -71,7 +89,7 @@ document.getElementById("stopSound").addEventListener("click", () => {
         currentOscillator = null;
     }
     document.getElementById("playSound").disabled = false; // Enable play button
-    document.getElementById("stopSound").disabled = true; // Disable stop button
+    document.getElementById("stopSound").disabled = false; // Enable stop button
 });
 
 // document.getElementById("playMusic").addEventListener("click",()=>{
@@ -101,3 +119,5 @@ function resetSettings() {
 }
 
 document.getElementById("resetButton").addEventListener("click", resetSettings);
+
+<input type="button" id="mixBut" value="Start" />
