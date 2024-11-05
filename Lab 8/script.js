@@ -61,8 +61,11 @@ document.getElementById("playMusic").addEventListener("click", () => {
     const ambientSound = new Audio("trees.mp3"); // Replace with your file name 
     ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
     ambientSound.play();
-    document.getElementById("playSound").disabled = true; // Disable play button
+    document.getElementById("playMusic").disabled = true; // Disable play button after starting
+    document.getElementById("playMusic").disabled = true; // Disable play button
     document.getElementById("stopSound").disabled = false; // Enable stop button
+    // document.getElementById("playSound").disabled = true; // Disable play button
+    // document.getElementById("stopSound").disabled = false; // Enable stop button
 });
 document.getElementById("playMusic2").addEventListener("click", () => {
     oscillator.start();
@@ -70,8 +73,11 @@ document.getElementById("playMusic2").addEventListener("click", () => {
     const ambientSound = new Audio("rainmorning.mp3"); // Replace with your file name 
     ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
     ambientSound.play();
-    document.getElementById("playSound").disabled = true; // Disable play button
+    document.getElementById("playMusic2").disabled = true; // Disable play button after starting
+    document.getElementById("playMusic2").disabled = true; // Disable play button
     document.getElementById("stopSound").disabled = false; // Enable stop button
+    // document.getElementById("playSound").disabled = true; // Disable play button
+    // document.getElementById("stopSound").disabled = false; // Enable stop button
 });
 document.getElementById("playMusic3").addEventListener("click", () => {
     oscillator.start();
@@ -79,8 +85,11 @@ document.getElementById("playMusic3").addEventListener("click", () => {
     const ambientSound = new Audio("beach.mp3"); // Replace with your file name 
     ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
     ambientSound.play();
-    document.getElementById("playSound").disabled = true; // Disable play button
+    document.getElementById("playMusic3").disabled = true; // Disable play button after starting
+    document.getElementById("playMusic3").disabled = true; // Disable play button
     document.getElementById("stopSound").disabled = false; // Enable stop button
+    // document.getElementById("playSound").disabled = true; // Disable play button
+    // document.getElementById("stopSound").disabled = false; // Enable stop button
 });
 
 document.getElementById("stopSound").addEventListener("click", () => {
@@ -89,7 +98,7 @@ document.getElementById("stopSound").addEventListener("click", () => {
         currentOscillator = null;
     }
     document.getElementById("playSound").disabled = false; // Enable play button
-    document.getElementById("stopSound").disabled = false; // Enable stop button
+    document.getElementById("stopSound").disabled = true; // Enable stop button
 });
 
 // document.getElementById("playMusic").addEventListener("click",()=>{
