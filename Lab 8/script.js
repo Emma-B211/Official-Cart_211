@@ -1,50 +1,87 @@
 // Initialize Audio Context and Oscillator
-//const button = document.getElementById("btn")
-let turnedOn = false
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const oscillator = audioContext.createOscillator();
 const gainNode = audioContext.createGain();
-
+let currentOscillator = null;
 // Set initial oscillator properties
 oscillator.type = 'sine'; // Options: 'sine', 'square', 'sawtooth', 'triangle'
 oscillator.frequency.setValueAtTime(440, audioContext.currentTime); // Default frequency (A4)
 oscillator.connect(gainNode);
 gainNode.connect(audioContext.destination);
 gainNode.gain.setValueAtTime(0.5, audioContext.currentTime); // Default volume
+// Function to create and play an oscillator
+function createOscillator(frequency = 440, startTime = audioContext.currentTime, duration = 1.0) {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    // Set oscillator properties
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(frequency, startTime);
+    gainNode.gain.setValueAtTime(0.5, startTime);
+
+    // Connect nodes
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    // Start and stop the oscillator
+    oscillator.start(startTime);
+    oscillator.stop(startTime + duration);
+
+    return oscillator;
+}
 
 // Play Sound Button
 document.getElementById("playSound").addEventListener("click", () => {
     oscillator.start();
     document.getElementById("playSound").disabled = true; // Disable play button after starting
+    document.getElementById("playSound").disabled = true; // Disable play button
+    document.getElementById("stopSound").disabled = false; // Enable stop button
+});
+document.getElementById("playMusic").addEventListener("click",()=>{
+    oscillator.start();
+    document.getElementById("playMusic").disabled=true;
+    const ambientSound = new Audio("trees.mp3"); // Replace with your file name 
+    ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
+     ambientSound.play();
+     document.getElementById("playSound").disabled = true; // Disable play button
+    document.getElementById("stopSound").disabled = false; // Enable stop button
+} );
+document.getElementById("playMusic2").addEventListener("click",()=>{
+    oscillator.start();
+    document.getElementById("playMusic2").disabled=true;
+    const ambientSound = new Audio("rainmorning.mp3"); // Replace with your file name 
+    ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
+     ambientSound.play();
+     document.getElementById("playSound").disabled = true; // Disable play button
+    document.getElementById("stopSound").disabled = false; // Enable stop button
+} );
+document.getElementById("playMusic3").addEventListener("click",()=>{
+    oscillator.start();
+    document.getElementById("playMusic3").disabled=true;
+    const ambientSound = new Audio("beach.mp3"); // Replace with your file name 
+    ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
+     ambientSound.play();
+     document.getElementById("playSound").disabled = true; // Disable play button
+    document.getElementById("stopSound").disabled = false; // Enable stop button
+} );
+
+document.getElementById("stopSound").addEventListener("click", () => {
+    if (currentOscillator) {
+        currentOscillator.stop();
+        currentOscillator = null;
+    }
+    document.getElementById("playSound").disabled = false; // Enable play button
+    document.getElementById("stopSound").disabled = true; // Disable stop button
 });
 
-document.getElementById("playMusic").addEventListener("click", () => {
-    //oscillator.start();
-    document.getElementById("playMusic").disabled = true; // Disable play button after starting
-    const ambientSound = new Audio('test.mp3');
-    ambientSound.loop = true;
-    ambientSound.volume = 0.2;
-    ambientSound.play();});
-    document.getElementById("playMusic2").addEventListener("click", () => {
-        //oscillator.start();
-        document.getElementById("playMusic2").disabled = true; // Disable play button after starting
-        const ambientSound = new Audio('moonlight.wav');
-        ambientSound.loop = true;
-        ambientSound.volume = 0.2;
-        ambientSound.play();});
-        document.getElementById("playMusic3").addEventListener("click", () => {
-            //oscillator.start();
-            document.getElementById("playMusic3").disabled = true; // Disable play button after starting
-            const ambientSound = new Audio('rainmorning.mp3');
-            ambientSound.loop = true;
-            ambientSound.volume = 0.2;
-            ambientSound.play();});
+// document.getElementById("playMusic").addEventListener("click",()=>{
+//     oscillator.start();
+//     document.getElementById("playMusic").disabled=true;
+//     const ambientSound = new Audio("trees.mp3"); // Replace with your file name 
+//     ambientSound.loop = true; ambientSound.volume = 0.2; // Set lower volume for background noise
+//      ambientSound.play();
+// } );
 
-document.getElementById("stopSound").addEventListener("click", () =>{
-    oscillator.stop();
-    document.getElementById("stopSound").disabled=false;
-    
-} );
 // Volume Control Slider
 document.getElementById("volumeControl").addEventListener("input", (event) => {
     gainNode.gain.setValueAtTime(event.target.value, audioContext.currentTime);
@@ -64,46 +101,3 @@ function resetSettings() {
 }
 
 document.getElementById("resetButton").addEventListener("click", resetSettings);
-
-
-function createOscillator(frequency=440, startTime=audioContext.currentTime,duration=1.0){
-    const oscillator=audioContext.createOscillator();
-    const gainNode= audioContext.createGain();
-
-    oscillator.type="sine";
-    oscillator.frequency.setValueAtTime(frequency,startTime);
-    gainNode.gain.setValueAtTime(0.5,startTime);
-
-
-    document.getElementById("sineWave").addEventListener("click", () => { oscillator.type = 'sine'; }); 
-    document.getElementById("squareWave").addEventListener("click", () => { oscillator.type = 'square'; }); 
-
-    document.getElementById("sawtooth").addEventListener("click", () => { oscillator.type = 'sine'; }); 
-    document.getElementById("pentagonWave").addEventListener("click", () => { oscillator.type = 'square'; }); 
-
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-
-    oscillator.start(startTime);
-    oscillator.stop(startTime + duration);
-    const delayNode = audioContext.createDelay(); delayNode.delayTime.setValueAtTime(0.3, audioContext.currentTime); 
-    // 0.3-second delay oscillator.connect(delayNode); delayNode.connect(gainNode);
-    return oscillator;
-    
-}
-
-
-
-document.getElementById("playSound").addEventListener("click",()=>{
-    createOscillator();
-    oscillator.start();
-    document.getElementById("playSound").disabled=true;
-    document.getElementById("playSound").disabled=false;
-});
-
- 
-//  const ambientSound = new Audio("761032__logicmoon__moonlight.wav");
-// ambientSound.loop = true;
-// ambientSound.volume = 0.2;
-// ambientSound.play();
