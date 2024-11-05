@@ -72,7 +72,7 @@ document.getElementById("stopSound").addEventListener("click", () => {
         currentOscillator = null;
     }
     document.getElementById("playSound").disabled = false; // Enable play button
-    document.getElementById("stopSound").disabled = true; // Disable stop button
+    document.getElementById("stopSound").disabled = false; // Disable stop button
 });
 // Function to create and play an oscillator
 function createOscillator(frequency = 440, startTime = audioContext.currentTime, duration = 1.0) {
