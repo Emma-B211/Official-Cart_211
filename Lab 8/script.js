@@ -1,4 +1,6 @@
 // Initialize Audio Context and Oscillator
+//const button = document.getElementById("btn")
+let turnedOn = false
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const oscillator = audioContext.createOscillator();
 const gainNode = audioContext.createGain();
@@ -37,9 +39,11 @@ document.getElementById("playMusic").addEventListener("click", () => {
             ambientSound.loop = true;
             ambientSound.volume = 0.2;
             ambientSound.play();});
+
 document.getElementById("stopSound").addEventListener("click", () =>{
     oscillator.stop();
     document.getElementById("stopSound").disabled=false;
+    
 } );
 // Volume Control Slider
 document.getElementById("volumeControl").addEventListener("input", (event) => {
@@ -70,12 +74,21 @@ function createOscillator(frequency=440, startTime=audioContext.currentTime,dura
     oscillator.frequency.setValueAtTime(frequency,startTime);
     gainNode.gain.setValueAtTime(0.5,startTime);
 
+
+    document.getElementById("sineWave").addEventListener("click", () => { oscillator.type = 'sine'; }); 
+    document.getElementById("squareWave").addEventListener("click", () => { oscillator.type = 'square'; }); 
+
+    document.getElementById("sawtooth").addEventListener("click", () => { oscillator.type = 'sine'; }); 
+    document.getElementById("pentagonWave").addEventListener("click", () => { oscillator.type = 'square'; }); 
+
+
     oscillator.connect(gainNode);
     gainNode.connect(audioContext.destination);
 
     oscillator.start(startTime);
     oscillator.stop(startTime + duration);
-
+    const delayNode = audioContext.createDelay(); delayNode.delayTime.setValueAtTime(0.3, audioContext.currentTime); 
+    // 0.3-second delay oscillator.connect(delayNode); delayNode.connect(gainNode);
     return oscillator;
     
 }
