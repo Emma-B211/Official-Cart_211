@@ -10,25 +10,25 @@ oscillator.connect(gainNode);
 gainNode.connect(audioContext.destination);
 gainNode.gain.setValueAtTime(0.5, audioContext.currentTime); // Default volume
 // Function to create and play an oscillator
-function createOscillator(frequency = 440, startTime = audioContext.currentTime, duration = 1.0) {
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
+// function createOscillator(frequency = 440, startTime = audioContext.currentTime, duration = 1.0) {
+//     const oscillator = audioContext.createOscillator();
+//     const gainNode = audioContext.createGain();
 
-    // Set oscillator properties
-    oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(frequency, startTime);
-    gainNode.gain.setValueAtTime(0.5, startTime);
+//     // Set oscillator properties
+//     oscillator.type = 'sine';
+//     oscillator.frequency.setValueAtTime(frequency, startTime);
+//     gainNode.gain.setValueAtTime(0.5, startTime);
 
-    // Connect nodes
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
+//     // Connect nodes
+//     oscillator.connect(gainNode);
+//     gainNode.connect(audioContext.destination);
 
-    // Start and stop the oscillator
-    oscillator.start(startTime);
-    oscillator.stop(startTime + duration);
+//     // Start and stop the oscillator
+//     oscillator.start(startTime);
+//     oscillator.stop(startTime + duration);
 
-    return oscillator;
-}
+//     return oscillator;
+// }
 
 // Play Sound Button
 document.getElementById("playSound").addEventListener("click", () => {
@@ -73,6 +73,26 @@ document.getElementById("stopSound").addEventListener("click", () => {
     document.getElementById("playSound").disabled = false; // Enable play button
     document.getElementById("stopSound").disabled = true; // Disable stop button
 });
+// Function to create and play an oscillator
+function createOscillator(frequency = 440, startTime = audioContext.currentTime, duration = 1.0) {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    // Set oscillator properties
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(frequency, startTime);
+    gainNode.gain.setValueAtTime(0.5, startTime);
+
+    // Connect nodes
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    // Start and stop the oscillator
+    oscillator.start(startTime);
+    oscillator.stop(startTime + duration);
+
+    return oscillator;
+}
 
 // document.getElementById("playMusic").addEventListener("click",()=>{
 //     oscillator.start();
