@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        body {
+          body {
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
         }
 
-    
         .topnav {
     position:relative;
     overflow:hidden;
@@ -35,8 +34,8 @@
 
 }
 .topnav a.active{
-    background-color:#e646ce;
-    color:white;
+    background-color: #e646ce;
+    color:rgb(255, 255, 255);
 }
 
 .topnav-centered a{
@@ -44,8 +43,8 @@ float:none;
 position: absolute;
 top: 50%;
 left: 50%;
-width: 100%;
-z-index: 9999999;
+/* width: 100%;
+z-index: 9999999; */
 transform: translate(-50%, -50%);
 }
 
@@ -56,8 +55,6 @@ transform: translate(-50%, -50%);
     .topnav a, .topnav-right{
         float:none;
         display: block;
-        /* width: 100%;
-        z-index: 9999999; */
     }
 
     .topnav-centered a{
@@ -65,40 +62,8 @@ transform: translate(-50%, -50%);
         top: 0;
         left: 0;
         transform: none;
-        /* width: 100%;
-        z-index: 9999999; */
     }
 } 
-
-        /* .navbar {
-            overflow: hidden;
-            background-color: rgb(153, 72, 230);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 9999999;
-        } 
-
-         .navbar a {
-            float: top;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .navbar a:hover {
-            background: #e58bf7;
-            color: rgb(250, 249, 250);
-        }
-
-        .navbar a:hover:not {
-            background-color: #eb89ff;
-            color: #8935e9;
-        } */
-
 
         .main {
             padding: 16px;
@@ -120,11 +85,12 @@ transform: translate(-50%, -50%);
             <a href="index.html">Home</a>
             <a  href="about.html"> About</a>
             <a  href="artwork.html"> Art Work</a>
-
+            <a  href="blog.html"> Blog </a>
+            <a href="contact.html" class="active"> Contact</a>
     <!---Right-aligned links-->
-    <div class="topnav-right">
-    <a  href="blog.html"> Blog </a>
-    <a href="contact.html" class="active"> Contact</a>
+    <!-- <div class="topnav-right"> -->
+    <!-- <a  href="blog.html"> Blog </a>
+    <a href="contact.html" class="active"> Contact</a> -->
     
 
     </div>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     
-        body {
+    body {
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
         }
@@ -37,7 +37,7 @@
 }
 .topnav a.active{
     background-color: #e646ce;
-    color:white;
+    color:rgb(255, 255, 255);
 }
 
 .topnav-centered a{
@@ -45,8 +45,34 @@ float:none;
 position: absolute;
 top: 50%;
 left: 50%;
+/* width: 100%;
+z-index: 9999999; */
 transform: translate(-50%, -50%);
 }
+
+.topnav-right{
+    float:right;
+}
+@media screen and (max-width:600px){
+    .topnav a, .topnav-right{
+        float:none;
+        display: block;
+    }
+
+    .topnav-centered a{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+} 
+
+        .main {
+            padding: 16px;
+            margin-top: 30px;
+            height: 1500px;
+
+        }
 
 .topnav-right{
     float:right;
@@ -133,7 +159,7 @@ transform: translate(-50%, -50%);
             height: 15px;
             width: 15px;
             margin: 0 2px;
-            background-color: #bbb;
+            background-color: #f49beb;
             border-radius: 50%;
             display: inline-block;
             transition: background-color 0.6s ease
@@ -182,11 +208,13 @@ transform: translate(-50%, -50%);
             <a href="index.html" class="active"> Home </a>
             <a href="about.html"> About </a>
             <a href="artwork.html"> Art Work </a>
+            <a href="blog.html"> Blog </a>
+            <a href="contact.html"> Contact </a>
 <!---Right-aligned links-->
-<div class="topnav-right">
+<!-- <div class="topnav-right">
     <a href="blog.html"> Blog </a>
     <a href="contact.html"> Contact </a>
-    </div>
+    </div> -->
 
     </div>
     <p>

@@ -107,7 +107,7 @@ p {
 }
 
 body {
-    font-family: Times New Roman;
+    font-family: 'Times New Roman', Times, serif;
     padding: 20px;
     background: #f1f1f1;
 }
@@ -170,9 +170,11 @@ body {
 } */
  /* add a background color to the top navigation bat */
 .topnav {
-    position:fixed;
-    background-color: #A020F0;
+    position:relative;
     overflow:hidden;
+    background-color: #A020F0;
+    width: 100%;
+    z-index: 9999999;
 } 
 /* style the link inside the navigation bar*/
         .topnav a {
@@ -182,6 +184,8 @@ body {
             padding: 14px, 16px;
             text-decoration:none;
             font-size:17px;
+            width: 100%;
+            z-index: 9999999;
 
 }
 /* change the color of links on hover*/
