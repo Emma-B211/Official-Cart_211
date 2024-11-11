@@ -7,9 +7,10 @@
     <style>
         body {
             margin: 0;
+            font-family: 'Times New Roman', Times, serif;
         }
 
-        .navbar {
+        /* .navbar {
             overflow: hidden;
             background-color: rgb(153, 72, 230);
             position: fixed;
@@ -36,7 +37,95 @@
         .navbar a:hover:not {
             background-color: #eb89ff;
             color: #8935e9;
+        } */
+        .topnav {
+    position:relative;
+    overflow:hidden;
+    background-color: #A020F0;
+    width: 100%;
+    z-index: 9999999;
+}
+        .topnav a {
+            float: left;
+            color:#eb89ff;
+            text-align: center;
+            padding: 14px, 16px;
+            text-decoration:none;
+            font-size:17px;
+            width: 100%;
+            z-index: 9999999;
+
+}
+.topnav a:hover{
+    background-color:#C8A2C8;
+    color: purple;
+
+}
+.topnav a.active{
+    background-color:#e646ce;
+    color:white;
+}
+
+.topnav-centered a{
+float:none;
+position: absolute;
+top: 50%;
+left: 50%;
+width: 100%;
+z-index: 9999999;
+transform: translate(-50%, -50%);
+}
+
+.topnav-right{
+    float:right;
+}
+@media screen and (max-width:600px){
+    .topnav a, .topnav-right{
+        float:none;
+        display: block;
+        /* width: 100%;
+        z-index: 9999999; */
+    }
+
+    .topnav-centered a{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        /* width: 100%;
+        z-index: 9999999; */
+    }
+} 
+
+        /* .navbar {
+            overflow: hidden;
+            background-color: rgb(153, 72, 230);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999999;
+        } 
+
+         .navbar a {
+            float: top;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
         }
+
+        .navbar a:hover {
+            background: #e58bf7;
+            color: rgb(250, 249, 250);
+        }
+
+        .navbar a:hover:not {
+            background-color: #eb89ff;
+            color: #8935e9;
+        } */
+
 
         .main {
             padding: 16px;
@@ -46,12 +135,27 @@
         }
     </style>
 </head>
-
+      <!--- Top Navigation-->>
+      <div class="topnav">
+        <div class="topnav-centered">
+            <ahref="index.html">Home</a>
+            </div>
+    
+            <!---Centered Link-->>
+            <a  href="about.html"> About</a>
+            <a  href="artwork.html"> Art Work</a>
+    <!---Right-aligned links-->>
+    <div class="topnav-right">
+    <a  href="blog.html"> Blog </a>
+    <a href="contact.html" class="active"> Contact</a>
+    </div>
+    
+    </div>
 <body class="h1">
     <p>
         <span class="lovely"> Emma Beldick</span>
     </p>
-
+<!-- 
     <div class="navbar">
         <li> <a href="index.html">Home</a></li>
         <li><a href="about.html"> About</a></li>
@@ -59,7 +163,7 @@
         <li> <a href="blog.html"> Blog</a> </li>
         <li><a class="active" href="contact.html"> Contact</a></li>
 
-    </div>
+    </div> -->
 
 
 </body>

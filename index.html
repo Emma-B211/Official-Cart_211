@@ -9,8 +9,61 @@
     
         body {
             margin: 0;
+            font-family: 'Times New Roman', Times, serif;
         }
 
+        .topnav {
+    position:relative;
+    overflow:hidden;
+    background-color: #A020F0;
+    width: 100%;
+    z-index: 9999999;
+}
+        .topnav a {
+            float: left;
+            color:#eb89ff;
+            text-align: center;
+            padding: 14px, 16px;
+            text-decoration:none;
+            font-size:17px;
+            width: 100%;
+            z-index: 9999999;
+
+}
+.topnav a:hover{
+    background-color:#C8A2C8;
+    color: purple;
+
+}
+.topnav a.active{
+    background-color: #e646ce;
+    color:white;
+}
+
+.topnav-centered a{
+float:none;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.topnav-right{
+    float:right;
+}
+@media screen and (max-width:600px){
+    .topnav a, .topnav-right{
+        float:none;
+        display: block;
+    }
+
+    .topnav-centered a{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+} 
 
         .navbar {
             overflow: hidden;
@@ -19,10 +72,10 @@
             top: 0;
             width: 100%;
             z-index: 9999999;
-        }
+        } 
 
-        .navbar a {
-            float: left;
+         .navbar a {
+            float: top;
             display: block;
             color: #f2f2f2;
             text-align: center;
@@ -142,19 +195,40 @@
 
 <body class="h1">
 
+    <!-- <p>
+        <span class="lovely">
+            <h1>Emma Beldick </h1>
+        </span>
+    </p> -->
+    <!--- Top Navigation-->>
+    <div class="topnav">
+        <div class="topnav-centered">
+             <a href="index.html" class="active">Home</a>
+            </div>
+
+            <!---Centered Link-->>
+            <a href="about.html"> About</a>
+            <a href="artwork.html"> Art Work</a>
+<!---Right-aligned links-->>
+<div class="topnav-right">
+    <a href="blog.html"> Blog </a>
+    <a href="contact.html"> Contact</a>
+    </div>
+
+    </div>
     <p>
         <span class="lovely">
             <h1>Emma Beldick </h1>
         </span>
     </p>
-    <div class="navbar">
+    <!-- <div class="navbar">
         <li> <a class="active" href="index.html">Home</a></li>
         <li><a href="about.html"> About</a> </li>
         <li><a href="artwork.html"> Art Work</a> </li>
         <li> <a href="blog.html"> Blog</a></li>
         <li><a href="contact.html"> Contact</a> </li>
 
-    </div>
+    </div> -->
 </body>
 
 <br>
