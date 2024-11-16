@@ -169,59 +169,118 @@ body {
     overflow:hidden;
 } */
  /* add a background color to the top navigation bat */
-.topnav {
-    position:relative;
-    overflow:hidden;
-    background-color: #A020F0;
+
+ .fixed-nav-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:9999;
+    width:100%;
+    height:50px;
+    background-color:#bd0ee0
+}
+.content{
+    margin-top:20px;
+}
+
+.fixed-nav-bar li, fixed-nav-var a {
+    height:50px;
+    line-height:50px;
+}
+
+.menu{
+    width:90%;
+    max-width:960px;
+    margin: 0 auto;
+}
+
+.menu a, .menu a:visited{
+    color:#eb89ff;
+}
+
+.menu a:hover, .menu a:target{
+    color: #f952ee; 
+
+}
+
+.menu-items{
+    display: inline-block;
+}
+.sitename{
+    display: inline-block;
+    margin-right: 20px;
+    margin-left:10px;
+}
+a.sitename, a:visited.sitename{
+    color: #f49beb;
+}
+
+.menu-items li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.menu-items a{
+    text-decoration: none;
+}
+.show, .hide{
+    display:none;
+    padding-left:15px;
+    background-color:transparent;
+    background-repeat: no-repeat;
+    color:#f6b7f0
+}
+
+.show{
+    background-image: url(assets/down-arrow-icon.png);
+}
+.hide{
+    background-image: url(assets/up-arrow-icon.png);
+}
+
+@media only screen and (max-width:800px){
+    .menu { 
+    position: relative;
     width: 100%;
-    z-index: 9999999;
-} 
-/* style the link inside the navigation bar*/
-        .topnav a {
-            float: left;
-            color:#eb89ff;
-            text-align: center;
-            padding: 14px, 16px;
-            text-decoration:none;
-            font-size:17px;
-            width: 100%;
-            z-index: 9999999;
+  }
+  .sitename {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin-left: 0px;
+  }
+  .menu-items {
+    display: none; 
+    width: 100%;
+    margin-top: 50px;
+    background-color: #008378;
+  }
+  .menu-items li {
+    display: block;
+    text-align: center;
+  }
+  .show, .hide {  
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+  .show {
+    display: inline-block;
+  }
+  .hide {
+    display: none;
+  }
+  #menu:target .show {
+    display: none;
+  }
+  #menu:target .hide, #menu:target .menu-items {
+    display: inline-block;
+  }
+}
 
-}
-/* change the color of links on hover*/
-.topnav a:hover{
-    background-color:#C8A2C8;
-    color: purple;
-
-}
-/*  change the color to the active.current link */
-.topnav a.active{
-    background-color: #04aa6d;
-    color:white;
-}
-/* Centered section inside the top navigation */
-.topnav-centered a{
-float:none;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-/* right-aligned section inside the top navigation*/
-.topnav-right{
-    float:right;
-}
-/* Responsive navigation menu-display links on top of each of next to each other (for mobile devices)*/
-@media screen and (max-width:600px){
-    .topnav a, .topnav-right{
-        float:none;
-        display: block;
-    }
-
-    .topnav-centered a{
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-    }
+@media only screen and (max-width: 220px) {
+  .sitename, .show, .hide {
+    font-size: 14px;
+  }
 }
