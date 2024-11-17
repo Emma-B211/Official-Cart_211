@@ -112,12 +112,8 @@ of each other instead of next to each other  */
 <body>
     <div class="container mt-5">
         <h1> Contact Me</h1>
-        <form class="row g-3" action="https://formsubmit.co/ebeldick@gmail.com" method="POST" >
-            <!---HoneyPot-->
-            <input type="text" name="_honey" style="display:none;">
-            <!---Disable Captcha-->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://emma-b211.github.io/formsubmitdemo/success.html">
+        <form class action="https://formspree.io/f/mldelrvv" method="POST" >
+        
             <div class="col-md-6">
             <label for="firstName" class="form-label"> First Name </label>
             <input type="text" class="form-control" id="firstName" required>
@@ -126,16 +122,15 @@ of each other instead of next to each other  */
             <label for="lastName" class="form-label"> Last Name</label>
             <input type="text" class="form-control" id="lastName" required>
             </div>
-<div class="col-md-8">
-    <label for="Email" class="form-label"> Email</label>
-    <input type="email" class="form-control" name="emailInfo" required>
-    </div>
 
     <div class="col-md-8">
         <label for="Comments,Questions"> Comments, Questions?</label>
         <input type="text" class="form-control" id="Comments, Questions?" required>
         </div>
-    
+        <div class="col-md-8">
+            <label for="Email" class="form-label"> Email</label>
+            <input type="email" class="form-control" name="email Info" required>
+            </div>
 <button type="submit" class="btn btn-lg btn-dark btn-block"> Submit Form </button>
 </form>
     </div>
