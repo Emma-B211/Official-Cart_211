@@ -110,39 +110,35 @@ of each other instead of next to each other  */
 </body>
 
 <body>
-    <div class="container">
-        <div style="text-align:center">
-            <h2> Contact Me</h2>
-            <p> swing by to view what I have worked on or leave us a message</p>
+    <div class="container mt-5">
+        <h1> Contact Me</h1>
+        <form class="row g-3" action="https://formsubmit.co/ebeldick@gmail.com" method="POST" >
+            <!---HoneyPot-->
+            <input type="text" name="_honey" style="display:none;">
+            <!---Disable Captcha-->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <div class="col-md-6">
+            <label for="firstName" class="form-label"> First Name </label>
+            <input type="text" class="form-control" id="firstName" required>
         </div>
-
-        <div class="row">
-            <div class="column">
-                <img src="flashlight-7718966_640.jpg" style="width:100%">
+        <div class="col-md-6">
+            <label for="lastName" class="form-label"> Last Name</label>
+            <input type="text" class="form-control" id="lastName" required>
             </div>
-
-            <div class="column">
-                <form action="/action_page.php">
-                    <label for="fname"> First Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                    <label for="lname"> Last Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                    <label for="country"> Country</label>
-                    <select id="country" name="country">
-                        <option value="australia"> Australia</option>
-                        <option value="canada"> Canada</option>
-                        <option value="united states"> United States</option>
-                        <Option value="ireland"> Ireland</Option>
-                    </select>
-                    <label for="subject"> Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write Something.."
-                        style="height:170px"> </textarea>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-        </div>
+<div class="col-md-8">
+    <label for="Email" class="form-label"> Email</label>
+    <input type="email" class="form-control" name="emailInfo" required>
     </div>
 
+    <div class="col-md-8">
+        <label for="Comments,Questions"> Comments, Questions?</label>
+        <input type="text" class="form-control" id="Comments, Questions?" required>
+        </div>
+    
+<button type="submit" class="btn btn-lg btn-dark btn-block"> Submit Form </button>
+</form>
+    </div>
 </body>
 
 
