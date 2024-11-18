@@ -45,6 +45,17 @@
  </a-marker>
  <a-entity camera></a-entity>
 </a-scene>
+<a-marker type="pattern" url="path/to/your_custom_marker.patt">
+    <a-box position="0 0.5 0" color="purple" scale="0.5 0.5 0.5"></a-box>
+   </a-marker>
+<!-- Hiro Marker -->
+<!-- <a-marker preset="hiro">
+    <a-box position="3 1.5 2" color="purple" scale="2.5 4.5 6.5"></a-box>
+   </a-marker> -->
+   <!-- Kanji Marker -->
+   <!-- <a-marker preset="kanji">
+    <a-sphere position="7 4.5 8" color="green" radius="6.3"></a-sphere>
+   </a-marker> -->
 <script>
  function startAR() {
  document.getElementById('startButton').style.display = 'none';
@@ -57,6 +68,8 @@
  }
  }, 1000);
  }
+
+ 
 </script>
 </body>
 </html>
