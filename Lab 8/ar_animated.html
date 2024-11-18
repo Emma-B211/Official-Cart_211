@@ -31,8 +31,8 @@
 
     <button id="startButton" onclick="startAR()">Start AR Experience</button>
 <a-scene embedded arjs style="display: none;" id="ar-scene">
- <a-marker preset="hiro">
- <!-- Animated Box -->
+ <!-- <a-marker preset="hiro">
+ <!- Animated Box -->
  <a-box position="0 0.5 0" color="blue" scale="0.5 0.5 0.5"
  animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-box>
  <!-- Bouncing Sphere -->
@@ -45,7 +45,7 @@
  </a-marker>
  <a-entity camera></a-entity>
 </a-scene>
-<a-marker type="pattern" url="path/to/your_custom_marker.patt">
+<a-marker type="pattern" url="pattern-maker.patt">
     <a-box position="0 0.5 0" color="purple" scale="0.5 0.5 0.5"></a-box>
    </a-marker>
 <!-- Hiro Marker -->
