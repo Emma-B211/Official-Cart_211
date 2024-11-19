@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR.js Demo with Camera Access Button</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #startButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Start button for user interaction -->
+<button id="startButton" onclick="startAR()">Start AR Experience</button>
+
+<!-- AR scene setup, hidden initially -->
+<a-scene embedded arjs style="display: none;" id="ar-scene">
+    <a-marker preset="hiro">
+        <a-box position="0 0.5 0" color="blue" scale="0.5 0.5 0.5"></a-box>
+        <a-sphere position="0.5 0.7 0" radius="0.25" color="yellow"></a-sphere>
+        <a-cylinder position="-0.5 0.3 0" radius="0.2" height="0.5" color="green"></a-cylinder>
+    </a-marker>
+    <a-entity camera></a-entity>
+</a-scene>
+
+<script>
+    function startAR() {
+        // Hide the start button
+        document.getElementById('startButton').style.display = 'none';
+        
+        // Show the AR scene to enable camera access
+        document.getElementById('ar-scene').style.display = 'block';
+        
+        // Force the video to play inline
+        setTimeout(() => {
+            const video = document.querySelector('video');
+            if (video) {
+                video.setAttribute('playsinline', '');
+                video.setAttribute('autoplay', 'true');
+                video.play().catch(error => {
+                    console.error("Video playback failed:", error);
+                });
+            }
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
