@@ -37,9 +37,12 @@
     <a-scene embedded arjs style="display: none;" id="ar-scene">
         <a-marker type="pattern" url="assets/pattern-kanji maker image.patt">
             <!-- Animated Box -->
-            <a-box position="0 0.5 0" color="white" scale="2.5 3.5 2.5"
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-box>
+            <!-- <a-box position="0 0.5 0" color="white" scale="2.5 3.5 2.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-box> -->
+            <a-box position="0 0.5 0" color="white"
+                onclick="document.querySelector('#sound').components.sound.playSound()"></a-box>
             <a-sound id="sound" src="piano_loop.wav"></a-sound>
+
             <!-- Bouncing Sphere -->
             <a-sphere position="0.5 0.7 0" radius="0.25" color="blue"
                 animation="property: position; to: 2.5 1.2 1; dir: alternate; loop: true; dur: 1000"></a-sphere>
@@ -49,7 +52,10 @@
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
-
+    <!-- -Sound-->
+    <a-box position="0 0.5 0" color="white"
+        onclick="document.querySelector('#sound').components.sound.playSound()"></a-box>
+    <a-sound id="sound" src="piano_loop.wav"></a-sound>
     <script>
         function startAR() {
             document.getElementById('startButton').style.display = 'none';
