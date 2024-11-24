@@ -706,9 +706,9 @@ font-size:14px;
 
 
 @media (max-width : 992px){
-    .navbar{
+    /* .navbar{
         flex-direction: column;
-    }
+    } */
 
     #site-main{
         margin-top: 14em;
@@ -759,4 +759,37 @@ font-size:14px;
         margin-top: 6em;
     }
 
+}
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:#c65ebb;
+}
+ul {
+position:fixed;
+top:0;
+left:0;
+z-index:9999;
+width:100%;
+height: 50px;
+list-style-type: none;
+margin:0;
+padding:0;
+overflow: hidden;
+background-color:#700985;
+}
+li {
+float: left;
+}
+
+li a {
+display: block;
+color:#d326f5;
+text-align:center;
+padding: 14px 16px;
+text-decoration: none;
+};
+li a:hover{
+    color: #da53cd;
+    background-color: #da53cd;
 }
