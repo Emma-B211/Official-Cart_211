@@ -128,6 +128,7 @@ img {
   .demo:hover {
     opacity: 1;
   }
+  /* website to fit on a smaller screen  */
   @media screen and (max-width:800px) {
 
     .leftcolumn,
@@ -142,6 +143,7 @@ img {
 </head>
 
 <body>
+  <!---Navigator bar links-->
     <ul>
 <li>  <a href="index.html" class="active"> Home </a></li>
    <li> <a href="about.html"> About </a></li>
@@ -165,6 +167,7 @@ img {
 <br>
 
 <body>
+  <!--- Gallery template --->
 <div class="w3-padding-32 w3-content" id="portfolio">
     <h2 class="w3-text-purple"> My Slideshow Gallery </h2>
     <hr class="w3-opacity">
@@ -203,7 +206,7 @@ img {
         let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Next/previous controls using javascript
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
