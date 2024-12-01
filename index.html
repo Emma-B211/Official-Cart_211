@@ -7,13 +7,13 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    
+    /* font style and website background colour */
     body {
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
             background-color:#c65ebb;
         }
-
+/* CSS of the navigation bar*/
         ul {
         position:fixed;
         top:0;
@@ -59,7 +59,7 @@ li a:hover{
         .mySlides {
             display: none;
         }
-
+/* css of the gallery */
         .prev,
         .next {
             cursor: pointer;
@@ -139,7 +139,7 @@ li a:hover{
 
 
 </head>
-
+<!--- Navigation tabs list-->
 <body>
     <ul>
 <li>  <a href="index.html" class="active"> Home </a></li>
@@ -161,7 +161,7 @@ li a:hover{
 <br>
 
 <body>
-
+<!--- Slide container how it would be displayed-->
     <div class="slideshow-container">
 
         <div class="mySlides fade">
@@ -197,7 +197,7 @@ li a:hover{
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
-
+// slides function
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
