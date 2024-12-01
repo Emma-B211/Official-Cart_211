@@ -4,236 +4,257 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&display=swap');
-/* root styling*/
-:root{
-    ---light:#f8f9fa;
-    ---secondary:#adb5db;
-    ---dark:#343a40;
-    ---primary-color:#f15bb5;
-    ---secondary-color:#2ec4b6;
-    ---border:#e9ecef;
-}
-body{
-font-family:'Times New Roman';
-padding: 0;
-margin:0;
-}
-a{
-    text-decoration:none;
-}
-*>*{
-    box-sizing:border-box;
-}
 
-/* global styling */
-.text-light{
-    color:val(---light);
-}
-.text-secondary{
-    color:val(---secondary);
-}
-.text-dark{
-    color:val(---dark);
-}
-.text-primary{
-    color:val(---primary);
-}
-.bg-light{
-    background-color:var(---light);
-}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&display=swap');
 
-.container{
-    max-width:3000px;
-    padding:0 20px;
-    margin:auto;
-}
-.img-fluid{
-    width:100%;
-}
-.text-title{
-    font-family:'Times New Roman', Times, serif;
-    font-weight:bold;
-}
-.secondary-title{
-    font-family:'Times New Roman', Times, serif;
-}
-.display-1{
-    font-size:50px;
-}
-.display-2{
-    font-size:40;
-}
-.display-3{
-font-size:20;
-}
-.text-center{
-    text-align:center;
-}
-.text-right{
-    text-align:right;
-}
-.btn{
-    padding:15px 20px;
-    border:none;
-}
-.btn-primary{
-    border-radius:4px;
-    background-color:val(---secondary-color);
-}
-.object-fit{
-    max-height:120px;
-    height:80px;
-    width:80px;
-    object-fit:fill;
-}
-.d-flex{
-    display: flex;   
-}
+        /* root styling*/
+        :root {
+            ---light: #f8f9fa;
+            ---secondary: #adb5db;
+            ---dark: #343a40;
+            ---primary-color: #f15bb5;
+            ---secondary-color: #2ec4b6;
+            ---border: #e9ecef;
+        }
 
-.flex-wrap{
-    flex-wrap: wrap;
-}
+        body {
+            font-family: 'Times New Roman';
+            padding: 0;
+            margin: 0;
+        }
 
-.justify-content-center{
-    justify-content: center;
-}
+        a {
+            text-decoration: none;
+        }
 
-.justify-content-between{
-    justify-content: space-between;
-}
+        *>* {
+            box-sizing: border-box;
+        }
 
-.mt-2{
-    margin-top: 50px;
-}
+        /* global styling */
+        .text-light {
+            color: val(---light);
+        }
 
-.mt-3{
-    margin-top: 50px;
-}
+        .text-secondary {
+            color: val(---secondary);
+        }
 
-.mb-3{
-    margin-bottom: 30px;
-}
+        .text-dark {
+            color: val(---dark);
+        }
 
-.m-0{
-    margin: 0;
-}
+        .text-primary {
+            color: val(---primary);
+        }
 
-.px-1{
-    padding-left: 5px;
-    padding-right: 5px;
-}
+        .bg-light {
+            background-color: var(---light);
+        }
 
-.px-2{
-    padding-left: 20px;
-    padding-right: 20px;
-}
+        .container {
+            max-width: 3000px;
+            padding: 0 20px;
+            margin: auto;
+        }
 
-.py-1{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+        .img-fluid {
+            width: 100%;
+        }
 
-.py-2{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+        .text-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
 
-.py-3{
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+        .secondary-title {
+            font-family: 'Times New Roman', Times, serif;
+        }
 
-.thumbnail{
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
+        .display-1 {
+            font-size: 50px;
+        }
 
-.rounded{
-    height: 120px;
-    width: 120px;
-    object-fit: fill;
-    border-radius: 99px;
-}
+        .display-2 {
+            font-size: 40;
+        }
 
-.shadow{
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-/* ----------- footer ---------- */
-#footer{
-    padding-top: 4em;
-}
+        .display-3 {
+            font-size: 20;
+        }
 
-#footer .feature-post .flex-item{
-    margin-bottom: 50px;
-}
+        .text-center {
+            text-align: center;
+        }
 
-#footer .tags a{
-    border-radius: 40px;
-    padding: 10px 20px;
-    font-size: 15px;
-}
+        .text-right {
+            text-align: right;
+        }
 
-#footer .copyrights{
-    padding: 10px 0;
-    border-top: 2px solid var(--light);
-}
+        .btn {
+            padding: 15px 20px;
+            border: none;
+        }
+
+        .btn-primary {
+            border-radius: 4px;
+            background-color: val(---secondary-color);
+        }
+
+        .object-fit {
+            max-height: 120px;
+            height: 80px;
+            width: 80px;
+            object-fit: fill;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .justify-content-between {
+            justify-content: space-between;
+        }
+
+        .mt-2 {
+            margin-top: 50px;
+        }
+
+        .mt-3 {
+            margin-top: 50px;
+        }
+
+        .mb-3 {
+            margin-bottom: 30px;
+        }
+
+        .m-0 {
+            margin: 0;
+        }
+
+        .px-1 {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .px-2 {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .py-1 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .py-2 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .py-3 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .rounded {
+            height: 120px;
+            width: 120px;
+            object-fit: fill;
+            border-radius: 99px;
+        }
+
+        .shadow {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        /* ----------- footer ---------- */
+        #footer {
+            padding-top: 4em;
+        }
+
+        #footer .feature-post .flex-item {
+            margin-bottom: 50px;
+        }
+
+        #footer .tags a {
+            border-radius: 40px;
+            padding: 10px 20px;
+            font-size: 15px;
+        }
+
+        #footer .copyrights {
+            padding: 10px 0;
+            border-top: 2px solid var(--light);
+        }
 
 
-/* ----------- .footer ---------- */
+        /* ----------- .footer ---------- */
 
-/* ----------- article page ------- */
+        /* ----------- article page ------- */
 
-#post{
-    padding: 0 2em;
-    margin-bottom: 4em;
-}
+        #post {
+            padding: 0 2em;
+            margin-bottom: 4em;
+        }
 
-.post-footer .post-author{
-    position: relative;
-    margin-top: 4em;
-    background-color: var(--light);
-}
+        .post-footer .post-author {
+            position: relative;
+            margin-top: 4em;
+            background-color: var(--light);
+        }
 
-.post-footer .post-author::after{
-    background-color: white;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4em;
-    z-index: 9999;
-}
+        .post-footer .post-author::after {
+            background-color: white;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4em;
+            z-index: 9999;
+        }
 
-.post-footer .post-author .author-avatar{
-    margin: 0 auto;
-    margin-bottom: 1em;
-    position: inherit;
-    z-index: 9999;
-    width:100%;
-}
+        .post-footer .post-author .author-avatar {
+            margin: 0 auto;
+            margin-bottom: 1em;
+            position: inherit;
+            z-index: 9999;
+            width: 100%;
+        }
 
-.post-footer .post-comments .reply{
-    padding-left: 7em;
-}
+        .post-footer .post-comments .reply {
+            padding-left: 7em;
+        }
 
-.form-control{
-    width: 100%;
-    border: 2px solid var(--border);
-    padding: 1em;
-    font-size: 18px;
-    margin-right: 50px;
-    font-family: 'Poppins', sans-serif;
-}
+        .form-control {
+            width: 100%;
+            border: 2px solid var(--border);
+            padding: 1em;
+            font-size: 18px;
+            margin-right: 50px;
+            font-family: 'Poppins', sans-serif;
+        }
 
-/* ----------- .article page ------- */
+        /* ----------- .article page ------- */
 
-/* ----------- sidebar page ------- */
-/* #sidebar .categories a{
+        /* ----------- sidebar page ------- */
+        /* #sidebar .categories a{
     padding: 1em 3em;
     font-size: 18px;
     margin-bottom: 1em;
@@ -246,11 +267,11 @@ font-size:20;
     color: var(--light);
 } */
 
-/* ----------- .sidebar page ------- */
+        /* ----------- .sidebar page ------- */
 
-/* ----------- sticky ------- */
+        /* ----------- sticky ------- */
 
-/* .sticky{
+        /* .sticky{
     position: fixed;
     top: 0;
     z-index: 99;
@@ -261,66 +282,66 @@ font-size:20;
     padding-top: 60px;
 } */
 
-/* ----------- .sticky ------- */
+        /* ----------- .sticky ------- */
 
 
 
-/* Media Query */
+        /* Media Query */
 
-.row{
-    display: flex;
-}
+        .row {
+            display: flex;
+        }
 
-.col-3{
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding-right: 35px;
-}
+        .col-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-right: 35px;
+        }
 
-.col-8{
-    flex: 0 0 70%;
-    max-width: 70%;
-}
+        .col-8 {
+            flex: 0 0 70%;
+            max-width: 70%;
+        }
 
-.col-4{
-    flex: 0 0 80%;
-    max-width: 80%;
-}
+        .col-4 {
+            flex: 0 0 80%;
+            max-width: 80%;
+        }
 
-@media (max-width : 1024px){
-    .row{
-       flex-wrap: wrap;
-    }
+        @media (max-width : 1024px) {
+            .row {
+                flex-wrap: wrap;
+            }
 
-    .col-3{
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+            .col-3 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
 
-    .col-8{
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+            .col-8 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
 
-    .col-4{
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+            .col-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
 
-}
+        }
 
 
-@media (max-width : 992px){
-    .navbar{
-        flex-direction: column;
-    }
+        @media (max-width : 992px) {
+            .navbar {
+                flex-direction: column;
+            }
 
-    #site-main{
-        margin-top: 14em;
-    }
-}
+            #site-main {
+                margin-top: 14em;
+            }
+        }
 
-/* @media (max-width : 768px){
+        /* @media (max-width : 768px){
     .grid .grid-item{
         width: calc(50% - 20px);
     }
@@ -332,83 +353,89 @@ font-size:20;
     }
 } */
 
-@media (max-width : 574px){
-    .toggle-button{
-        display: initial;
-    }
+        @media (max-width : 574px) {
+            .toggle-button {
+                display: initial;
+            }
 
-    .collapse{
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.8s cubic-bezier(0.51,-0.15, 0, 0.98);
-    }
+            .collapse {
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.8s cubic-bezier(0.51, -0.15, 0, 0.98);
+            }
 
-    .collapse .nav-link{
-        display: block;
-        text-align: center;
-    }
+            .collapse .nav-link {
+                display: block;
+                text-align: center;
+            }
 
-    .search-box{
-        border-right: none;
-    }
+            .search-box {
+                border-right: none;
+            }
 
-    .collapse-toggle{
-        max-height: 500px;
-    }
+            .collapse-toggle {
+                max-height: 500px;
+            }
 
-    .grid .grid-item{
-        width: calc(100% - 20px);
-    }
+            .grid .grid-item {
+                width: calc(100% - 20px);
+            }
 
-    #site-main{
-        margin-top: 6em;
-    }
+            #site-main {
+                margin-top: 6em;
+            }
 
-}
-/*  Navigation bar  */
-      ul {
-        position:fixed;
-        top:0;
-        left:0;
-        z-index:9999;
-        width:100%;
-        height: 50px;
-        list-style-type: none;
-        margin:0;
-        padding:0;
-        overflow: hidden;
-        /* background-color:#700985; */
-      }
-li {
-    float: left;
-}
-li a {
-    display: block;
-    color:#e29fef;
-    text-align:center;
-    padding: 14px 16px;
-    text-decoration: none;
-};
-li a:hover{
-    /* color: #da53cd; */
-    background-color: #f5bef0;
-}
-  </style>
+        }
+
+        /*  Navigation bar  */
+        ul {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 50px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #700985;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #e29fef;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ;
+
+        li a:hover {
+            /* color: #da53cd; */
+            background-color: #f5bef0;
+        }
+    </style>
 
     <style>
         /* blog organization design template  */
-          
+
         body {
             font-family: Times 'Times New Roman', Times, serif;
             padding: 10px;
-            background-color:#c65ebb;
+            background-color: #c65ebb;
         }
 
         .header {
             padding: 30px;
             font-size: 40px;
             text-align: center;
-            background-color:#c65ebb;
+            background-color: #c65ebb;
         }
 
         .leftcolumn {
@@ -448,20 +475,21 @@ li a:hover{
                 padding: 0;
             }
         } */
-         p{
-            font-size:50px;
-         }
+        p {
+            font-size: 50px;
+        }
     </style>
 </head>
 
 <body>
     <ul>
-      <li>  <a href="index.html">Home</a> </li>
-      <li>  <a  href="about.html"> About</a><li>
-     <li>   <a  href="artwork.html"> Art Work</a></li>
-       <li> <a href="blog.html" class="active"> Blog </a></li>
-       <li> <a href="contact.html"> Contact</a></li>
-      </ul>
+        <li> <a href="index.html">Home</a> </li>
+        <li> <a href="about.html"> About</a>
+        <li>
+        <li> <a href="artwork.html"> Art Work</a></li>
+        <li> <a href="blog.html" class="active"> Blog </a></li>
+        <li> <a href="contact.html"> Contact</a></li>
+    </ul>
 
 
     <!-- <p>
@@ -484,32 +512,32 @@ li a:hover{
 <body>
     <div class="header">
         <h2> Artist Blog </h2>
-<section if="posts">
-    <div class="container">
-<div class="grid">
-    <!---Article-->
-    <div class="grid-item">
-    <div class="article">
-        <div class="card">
-            <div class="overflow-img">
-                <a href="#">
-                    <img src="">
-                    </a>
-                    </div>
-                    <div class="card-body text-center px-1">
-                        <a href="#" class="text-title display-1 text-dark">
-                            <a href="blog_post_1.html">
-                            Welcome to my Blog!
-                            </a>
-                            <p class="secondary-title text-secondary display-3">
-                                <span> <i class="far fa-clock text-primary"></i> Sun Nov.25,2024</span>
-                                <!-- <span><i class="far fa-comments text-primary"></i> 1</span> -->
-                                </p>
+        <section if="posts">
+            <div class="container">
+                <div class="grid">
+                    <!---Article-->
+                    <div class="grid-item">
+                        <div class="article">
+                            <div class="card">
+                                <div class="overflow-img">
+                                    <a href="#">
+                                        <img src="">
+                                    </a>
                                 </div>
+                                <div class="card-body text-center px-1">
+                                    <a href="#" class="text-title display-1 text-dark">
+                                        <a href="blog_post_1.html">
+                                            Welcome to my Blog!
+                                        </a>
+                                        <p class="secondary-title text-secondary display-3">
+                                            <span> <i class="far fa-clock text-primary"></i> Sun Nov.25,2024</span>
+                                            <!-- <span><i class="far fa-comments text-primary"></i> 1</span> -->
+                                        </p>
                                 </div>
-                            </article>
                             </div>
-                            <!---.article-->
+                            </article>
+                        </div>
+                        <!---.article-->
                         <!----article-->
                         <div class="grid-item">
                             <article class="article">
@@ -522,72 +550,72 @@ li a:hover{
                                     <div class="card-body text-center px-1">
                                         <a href="#" class="text-title display-1 text-dark">
                                             <a href="blog_post_2.html">
-                                           About My First Project
-                                        </a>
-                                        <p class="secondary-title text-secondary display-3">
-                                            <span><i class="far fa-clock text-primary"></i>  Sun Nov.25, 2024</span>
-                                            <!-- <span><i class="far fa-comments text-primary"></i> 2</span> -->
-                                        </p>
+                                                About My First Project
+                                            </a>
+                                            <p class="secondary-title text-secondary display-3">
+                                                <span><i class="far fa-clock text-primary"></i> Sun Nov.25, 2024</span>
+                                                <!-- <span><i class="far fa-comments text-primary"></i> 2</span> -->
+                                            </p>
                                     </div>
                                 </div>
                             </article>
-                            </div>
-<!-- .article -->
-                            <!-- article -->
-                            <div class="grid-item">
-                                <article class="article">
-                                    <div class="card">
-                                        <div class="overflow-img">
-                                            <a href="#">
-                                                <img src="./assets/img3.jpg" class="img-fluid" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="card-body text-center px-1">
-                                            <a href="#" class="text-title display-1 text-dark">
-                                                <a href="blog_post_3.html">
-                                                    How I Worked on My Second Using UE4
+                        </div>
+                        <!-- .article -->
+                        <!-- article -->
+                        <div class="grid-item">
+                            <article class="article">
+                                <div class="card">
+                                    <div class="overflow-img">
+                                        <a href="#">
+                                            <img src="./assets/img3.jpg" class="img-fluid" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="card-body text-center px-1">
+                                        <a href="#" class="text-title display-1 text-dark">
+                                            <a href="blog_post_3.html">
+                                                How I Worked on My Second Using UE4
                                             </a>
                                             <p class="secondary-title text-secondary display-3">
                                                 <span><i class="far fa-clock text-primary"></i> Sun Nov.25, 2024</span>
                                                 <!-- <span><i class="far fa-comments text-primary"></i> 3</span> -->
                                             </p>
-                                        </div>
                                     </div>
-                                </article>
-                            </div>
-
-                            <div class="text-center">
-                                <button class="btn btn-primary secondary-title text-light">Load More Posts...</button>
-                            </div>
+                                </div>
+                            </article>
                         </div>
-                    </section>
-                      <!-- .Blog Post Section -->
 
-    
-                
-    <!-- .Main Site -->
+                        <div class="text-center">
+                            <button class="btn btn-primary secondary-title text-light">Load More Posts...</button>
+                        </div>
+                    </div>
+        </section>
+        <!-- .Blog Post Section -->
 
-    <!-- footer -->
-       <footer id="footer">
-           <div class="container">
-               <div class="row mb-3">
-                   <div class="col-3">
-                       <h2 class="footer-title secondary-title">About Us</h2>
 
-                       <div class="secondary-title text-secondary">
+
+        <!-- .Main Site -->
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-3">
+                        <h2 class="footer-title secondary-title">About Us</h2>
+
+                        <div class="secondary-title text-secondary">
                             <p class="mt-2 ">
                                 Student studying in Computation Arts program in hopes of working in the gaming industry.
                             </p>
-                            
+
                             <div class="email">
-                                <i class="fas fa-envelope text-primary"></i> 
-                               ebeldick@gmail.com
+                                <i class="fas fa-envelope text-primary"></i>
+                                ebeldick@gmail.com
                             </div>
 
-                       
-                        <!-- <h2 class="footer-title secondary-title mt-2">Social</h2> -->
 
-                        <!-- <div class="tags social">
+                            <!-- <h2 class="footer-title secondary-title mt-2">Social</h2> -->
+
+                            <!-- <div class="tags social">
                             <div class="d-flex flex-wrap">
                                 <a href="#" class="nav-link btn bg-light"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#" class="nav-link btn bg-light"><i class="fab fa-instagram"></i></a>
@@ -595,33 +623,39 @@ li a:hover{
                             </div>
                         </div> -->
 
-                   </div>
-               </div>
+                        </div>
+                    </div>
 
-               <!-- copyrights  -->
-               <div class="copyrights">
-                <div class="d-flex flex-wrap">
-                   <p class="text-center text-secondary display-2">
-                  
-                        © 2024 <a href="#" class="text-primary">Emma Beldick</a> - Personal Blog Theme. All rights reserved.
-                   </p>
-               </div>
-           </div>
-       </footer>
-    <!-- .footer -->
+                    <!-- copyrights  -->
+                    <div class="copyrights">
+                        <div class="d-flex flex-wrap">
+                            <p class="text-center text-secondary display-2">
+
+                                © 2024 <a href="#" class="text-primary">Emma Beldick</a> - Personal Blog Theme. All
+                                rights reserved.
+                            </p>
+                        </div>
+                    </div>
+        </footer>
+        <!-- .footer -->
 
 
-    <!-- masonry libray for horizontal grid -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
+        <!-- masonry libray for horizontal grid -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"
+            integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ=="
+            crossorigin="anonymous"></script>
 
-    <!-- swiper slider cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js" integrity="sha512-1LlEYE0qExJ/GUfAJ0k2K2fB5sIvMv/q6ueo3syohvQ3ElWDQVSMUOf39cxaDWHtNu7M6lF6ZC1H6A1m3SvheA==" crossorigin="anonymous"></script>
+        <!-- swiper slider cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js"
+            integrity="sha512-1LlEYE0qExJ/GUfAJ0k2K2fB5sIvMv/q6ueo3syohvQ3ElWDQVSMUOf39cxaDWHtNu7M6lF6ZC1H6A1m3SvheA=="
+            crossorigin="anonymous"></script>
 
-    <!-- custom javascript main.js file -->
-    <!-- <script src="main.js"></script> -->
+        <!-- custom javascript main.js file -->
+        <!-- <script src="main.js"></script> -->
 </body>
+
 </html>
-        <!-- <div class="row">
+<!-- <div class="row">
             <div class="leftcolumn">
                 <div class="card">
                     <h2> TITLE HEADING </h2>
@@ -652,7 +686,7 @@ li a:hover{
             </div>
         </div> -->
 
-    </div>
+</div>
 
 </body>
 

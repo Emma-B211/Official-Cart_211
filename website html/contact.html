@@ -6,145 +6,147 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
-          body {
+        body {
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
-            background-color:#c65ebb;
+            background-color: #c65ebb;
         }
-        ul {
-        position:fixed;
-        top:0;
-        left:0;
-        z-index:9999;
-        width:100%;
-        height: 50px;
-        list-style-type: none;
-        margin:0;
-        padding:0;
-        overflow: hidden;
-        /* background-color:#700985; */
-      }
-li {
-    float: left;
-}
 
-li a {
-    display: block;
-    color:#e29fef;
-    text-align:center;
-    padding: 14px 16px;
-    text-decoration: none;
-};
-li a:hover{
-    /* color: #da53cd; */
-    background-color: #f5bef0;
-}
-            /* Add a top margin to avoid content overlay */
-        
+        /* CSS of navigation bar */
+        ul {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 50px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #700985;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #e29fef;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ;
+
+        li a:hover {
+            /* color: #da53cd; */
+            background-color: #f5bef0;
+        }
+
+        /* Add a top margin to avoid content overlay */
+
 
         /* * {
             box-sizing: border-box
         } */
-        *{
-    box-sizing: border-box;
-}
-/* style inputs*/
-input[type=text], select, textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    margin-top:6px;
-    margin-bottom:16px;
-    resize:vertical;
-}
-input[type=submit]{
-    background-color:#eb89ff;
-    color:purple;
-    padding:12px 20px;
-    border:none;
-    cursor:pointer;
-}
-input[type=submit]:hover{
-    background-color:#f6b7f0;
-}
-/* create two columns that float next to each other */
-.column{
-    float:left;
-    width: 50%;
-margin-top:6px;
-padding:20px;
-}
-/* Clear floars after the columns */
-.row:after{
-    content:"";
-    display:table;
-    clear:both;
-}
-/* responsive layout- when the screen is less than 600px wide, make the two columns stack on top
+        * {
+            box-sizing: border-box;
+        }
+
+        /* style inputs*/
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #eb89ff;
+            color: purple;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #f6b7f0;
+        }
+
+        /* create two columns that float next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+            padding: 20px;
+        }
+
+        /* Clear floars after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* responsive layout- when the screen is less than 600px wide, make the two columns stack on top
 of each other instead of next to each other  */
-@media screen and (max-width:600px){
-    .column, input[type=submit]{
-        width:100%;
-        margin-top:0;
-    }
-}
+        @media screen and (max-width:600px) {
+
+            .column,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
     </style>
 </head>
-      <body>
-        <ul>
-            <li> <a href="index.html">Home</a></li>
-               <li> <a  href="about.html"> About</a></li>
-               <li> <a  href="artwork.html"> Art Work</a></li>
-             <li>   <a  href="blog.html"> Blog </a></li>
-             <li>   <a href="contact.html" class="active"> Contact</a></li>
-    </ul>
-<!-- <body class="h1"> -->
-    <!-- <p>
-        <span class="lovely"> Emma Beldick</span>
-    </p> -->
-<!-- 
-    <div class="navbar">
+
+<body>
+    <!--- List of navigation bar links-->
+    <ul>
         <li> <a href="index.html">Home</a></li>
-        <li><a href="about.html"> About</a></li>
-        <li><a href="artwork.html"> Art Work</a></li>
-        <li> <a href="blog.html"> Blog</a> </li>
-        <li><a class="active" href="contact.html"> Contact</a></li>
-
-    </div> -->
-
+        <li> <a href="about.html"> About</a></li>
+        <li> <a href="artwork.html"> Art Work</a></li>
+        <li> <a href="blog.html"> Blog </a></li>
+        <li> <a href="contact.html" class="active"> Contact</a></li>
+    </ul>
 
 </body>
 
 <body>
-<br>
+    <br>
+    <!--- Form spree intergration for the contact-->
     <div class="container mt-5">
         <h1> Contact Me</h1>
-        <form action= "https://formspree.io/f/mldelrvv" method="POST" >
-    
+        <form action="https://formspree.io/f/mldelrvv" method="POST">
+
             <div class="col-md-6">
                 <label for="text" class="form-label"> Full Name </label>
-                <!-- <textarea name="full name" name="Full Name" required></textarea> -->
-                <!-- <input type="text" name="Full Name" placeholder="Full Name" required> -->
-                </div>
-              
 
-           
-        </div>
-        <!-- <div class="col-md-6">
-            <label for="lastName" class="form-label"> Last Name</label>
-            <input type="text" class="form-control" id="lastName" required>
-            </div> -->
+            </div>
 
+
+
+    </div>
+    <!--- Containers for the messages and email-->
     <div class="col-md-8">
         <input type="text" class="form-label">Message </label>
         <textarea name="Message" placeholder="Message" required></textarea>
 
         <div class="col-md-8">
             <label for="Email" class="form-label"> Email</label>
-            <input type="email" name="email Info" placeholder="Email"required>
-            </div>
-<button type="submit" class="btn btn-lg btn-dark btn-block"> Submit Form </button>
-</form>
+            <input type="email" name="email Info" placeholder="Email" required>
+        </div>
+        <!--- Button-->
+        <button type="submit" class="btn btn-lg btn-dark btn-block"> Submit Form </button>
+        </form>
     </div>
 </body>
 
