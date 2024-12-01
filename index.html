@@ -7,7 +7,18 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+
     /* font style and website background colour */
+
+    .bgimg{
+        background-position:center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-image: url(emma\ beldick\ graduation.jpg);
+        min-height:100%;
+    }
+    
+
     body {
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
@@ -25,7 +36,7 @@
         margin:0;
         padding:0;
         overflow: hidden;
-        background-color:#700985;
+        /* background-color:#700985; */
       }
 li {
     float: left;
@@ -33,15 +44,96 @@ li {
 
 li a {
     display: block;
-    color:#d326f5;
+    color:#e29fef;
     text-align:center;
     padding: 14px 16px;
     text-decoration: none;
 };
 li a:hover{
-    color: #da53cd;
-    background-color: #da53cd;
+    /* color: #da53cd; */
+    background-color: #f5bef0;
 }
+*{
+    box-sizing: border-box;
+}
+img {
+  vertical-align: middle;
+}
+/* position the image container (needed to position the left and right arrows) */
+.container{
+    position: relative;
+}
+/* hide the images by default  */
+.mySlides{
+    display:none;
+}
+/* add a pointer when hovering over the thumbnail imges  */
+.cursor {
+    cursor: pointer;
+}
+/*  next and previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Number text (1/2 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  /* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 10px;
+    color: white;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  /* website to fit on a smaller screen  */
+  @media screen and (max-width:800px) {
 
             /* Add a top margin to avoid content overlay */
         
@@ -135,12 +227,20 @@ li a:hover{
             margin-top: 30px;
             height: 1500px;
         } */
+
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
     </style>
 
 
 </head>
 <!--- Navigation tabs list-->
 <body>
+  <!---Navigator bar links-->
     <ul>
 <li>  <a href="index.html" class="active"> Home </a></li>
    <li> <a href="about.html"> About </a></li>
@@ -150,48 +250,68 @@ li a:hover{
    </ul>
 
     </div>
-    <p>
+    <!-- <p>
         <span class="lovely">
             <h1>Emma Beldick </h1>
         </span>
-    </p>
-
+    </p> -->
+    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+<h1 class="w3-jumbo"><b>Emma Beldick </b> </h1>
+    <img src="emma beldick graduation.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block; width:60%; margin:auto;" height="1003">
+    </header>
 </body>
 
 <br>
 
 <body>
+
 <!--- Slide container how it would be displayed-->
     <div class="slideshow-container">
 
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 2</div>
-            <img src="IMG_1040.jpg" style="width:80%">
-            <div class="text">Serenity</div>
+  <!--- Gallery template --->
+<div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text-purple"> My Slideshow Gallery </h2>
+    <hr class="w3-opacity">
+    </div>
+
+<div class="container">
+
+    <div class="mySlides">
+        <div class="numbertext"> 1/2 </div>
+        <img src="IMG_1040.jpg" style="width:100%">
         </div>
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 2</div>
+        
+        <div class="mySlides">
+            <div class="numbertext"> 2/2 </div>
             <img src="Screen Shot 2022-12-01 at 7.11.37 PM.jpg" style="width:100%">
-            <div class="text">Left Behind(made with UE4)</div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-    </div>
-    <br>
+            </div>
+      
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)"> &#10095;</a>
 
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
 
-    </div>
-    <script>
+            <!-- <div class="caption-container">
+                <p id="caption"></p>  -->
+</div>
+              
+                <div class="row">
+                    <div class="column">
+                        <img class="demo cursor" src="IMG_1040.jpg" style="width:100%" onclick="currentSlide(1)">
+                     </div>
+
+                        <div class="column">
+                            <img class="demo cursor" src="Screen Shot 2022-12-01 at 7.11.37 PM.jpg" style="width:50%" onclick="currentSlides(2)">
+                            </div>
+                            </div>
+<script>
         let slideIndex = 1;
-        showSlides(slideIndex);
+showSlides(slideIndex);
 
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
+// Next/previous controls using javascript
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
 
         // Thumbnail image controls
         function currentSlide(n) {
@@ -208,6 +328,30 @@ li a:hover{
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
 
     </script>
 
